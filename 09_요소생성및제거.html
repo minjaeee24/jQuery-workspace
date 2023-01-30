@@ -132,8 +132,17 @@
             }, function(){ 
                 $(this).removeClass('lime');
             })
-        }) ;
-//다못적음
+        
+            // 복제버튼 클릭시 해당 요소를 복사해서 또다른 div에 붙여넣기
+            $("#clone").click(function(){
+                // let copy = $("#item1").clone(true); //이벤트까지 복사하기
+                // $("#clone-result").prepend(copy);
+                
+                //$("#clone-result").append($("#item1").clone(true));
+                
+                $("#item1").clone(true).attr("id","item2").appendTo("#clone-result").removeAttr("id")                
+            });
+        });
     </script>
 
     <hr>
